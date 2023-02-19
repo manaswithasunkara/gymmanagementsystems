@@ -2,6 +2,7 @@ create database gymmanagement;
 use gymmanagement;
 CREATE TABLE `gymmanagement`.`gym_admin` (
     `adminid` INT NOT NULL AUTO_INCREMENT,
+    `empid` INT NOT NULL,
     `firstname` VARCHAR(45) NOT NULL,
     `lastname` VARCHAR(45) NOT NULL,
     `phonenumber` VARCHAR(15) NULL,
@@ -64,4 +65,8 @@ SELECT * FROM `gymmanagement`.`gym_emp_attend`;
 
 SELECT * FROM `gymmanagement`.`gym_mem_attend`;
 
+select * from `gymmanagement`.`gym_admin` join gym_emp gma on gma.empid = gym_admin.empid;
 
+select * from `gymmanagement`.`gym_emp` join gym_emp_attend gma on gma.empid = gym_emp.empid;
+
+select * from `gymmanagement`.`gym_mem` join gym_mem_attend gma on gma.memid = gym_mem.memid;

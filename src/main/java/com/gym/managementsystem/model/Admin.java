@@ -19,6 +19,10 @@ public class Admin {
     @JsonSerialize
     private int adminId;
 
+    @Column(name = "empid")
+    @JsonProperty("empId")
+    private int empId;
+
     @Column(name = "firstname")
     @JsonProperty("firstName")
     private String firstName;
