@@ -7,24 +7,31 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity(name = "gym_admin")
+@Data
+@Entity
+@Table(name = "gym_admin")
 public class Admin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "admin_id", nullable = false)
+    @Column(name = "adminid", nullable = false)
+    @JsonProperty("adminId")
     @JsonSerialize
-    private Integer adminId;
+    private int adminId;
 
-    @Column(name = "admin_name")
-    @JsonProperty("adminName")
-    private String adminName;
+    @Column(name = "firstname")
+    @JsonProperty("firstName")
+    private String firstName;
 
-    @Column(name = "phone_number")
+    @Column(name = "lastname")
+    @JsonProperty("lastName")
+    private String lastName;
+
+    @Column(name = "phonenumber")
     @JsonProperty("phoneNumber")
     private String phoneNumber;
 
-    @Column(name = "email_id")
+    @Column(name = "emailid")
     @JsonProperty("emailId")
     private String emailId;
 

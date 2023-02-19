@@ -13,9 +13,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @RestController
-public class EmpAttendController {
+public class EmployeeAttendController {
 
-    private static Logger log = Logger.getLogger(EmpAttendController.class.getName());
+    private static Logger log = Logger.getLogger(EmployeeAttendController.class.getName());
 
 
     @Autowired
@@ -23,14 +23,14 @@ public class EmpAttendController {
 
     @RequestMapping(value = "/employees/attend", method = RequestMethod.GET)
     public List<EmployeeAttend> list() {
-        log.info("employees Available, No of Records: " + service.listAll().size());
+        log.info("Employees Available, No of Records: " + service.listAll().size());
         return service.listAll();
     }
 
     @RequestMapping(value = "/employees/attend/{attentdId}", method = RequestMethod.GET)
     public ResponseEntity<EmployeeAttend> get(@PathVariable Integer attendId) {
         try {
-            log.info("employee id: " + attendId);
+            log.info("Employees id: " + attendId);
             EmployeeAttend person1 = service.get(attendId);
             return new ResponseEntity<>(person1, HttpStatus.OK);
         } catch (NoSuchElementException e) {
@@ -41,7 +41,7 @@ public class EmpAttendController {
 
     @RequestMapping(value = "/employees/attend/add", method = RequestMethod.POST)
     public void add(@RequestBody EmployeeAttend employeeattend) {
-        log.info("New employee Added");
+        log.info("New employee status");
         service.save(employeeattend);
     }
 

@@ -2,32 +2,27 @@ package com.gym.managementsystem.model;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
-
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import javax.persistence.*;
 
-@Entity(name = "gym_emp")
+@Data
+@Entity
+@Table(name = "gym_emp")
 public class Employee {
-
-//    @OneToMany(
-//            mappedBy = "post",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    private EmployeeAttend employeeAttend;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "emp_id", nullable = false)
+    @Column(name = "empid", nullable = false)
+    @JsonProperty("empId")
     @JsonSerialize
-    private Integer empId;
+    private int empId;
 
-    @Column(name = "first_name")
+    @Column(name = "firstname")
     @JsonProperty("firstName")
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "lastname")
     @JsonProperty("lastName")
     private String lastName;
 
@@ -44,9 +39,9 @@ public class Employee {
     @JsonProperty("dob")
     private String dob;
 
-    @Column(name = "mobile")
-    @JsonProperty("mobile")
-    private String mobile;
+    @Column(name = "phone")
+    @JsonProperty("phone")
+    private String phone;
 
     @Column(name = "ssn")
     @JsonProperty("ssn")
@@ -56,8 +51,9 @@ public class Employee {
     @JsonProperty("designation")
     private String designation;
 
-    @Column(name = "join_date")
+    @Column(name = "joindate")
     @JsonProperty("joinDate")
     private String joinDate;
+
 
 }

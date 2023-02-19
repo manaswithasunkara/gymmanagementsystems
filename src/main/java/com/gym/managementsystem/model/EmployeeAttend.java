@@ -3,39 +3,40 @@ package com.gym.managementsystem.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
-@Entity(name = "gym_emp_attend")
+@Data
+@AllArgsConstructor
+@ToString
+@NoArgsConstructor
+@Entity
+@Table(name = "gym_emp_attend")
 public class EmployeeAttend {
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    private Employee employee;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "attend_id", nullable = false)
+    @Column(name = "attendid", nullable = false)
+    @JsonProperty("attendId")
     @JsonSerialize
-    private Integer attendId;
+    private int attendId;
 
-    @Column(name = "is_present")
+    @Column(name = "empid")
+    @JsonProperty("empId")
+    private int empId;
+
+    @Column(name = "ispresent")
     @JsonProperty("isPresent")
-    private String isPresent;
+    private Boolean isPresent;
 
 
     @Column(name = "date")
     @JsonProperty("date")
     private String date;
 
-    @ManyToOne
-    @JoinColumn(name = "employee_emp_id", referencedColumnName = "emp_id")
-    private Employee empId;
-
-    public Employee getEmpId() {
-        return empId;
-    }
-
-    public void setEmpId(Employee empId) {
-        this.empId = empId;
-    }
 }
