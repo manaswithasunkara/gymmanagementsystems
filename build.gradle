@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.gym'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter:2.7.3'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.3'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.3'
+	implementation 'org.springframework.boot:spring-boot-devtools:2.7.3'
+	implementation 'org.projectlombok:lombok:1.18.24'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.30'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.3'
+	developmentOnly "org.springframework.boot:spring-boot-devtools"
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'co.elastic.logging:ecs-logging-core:1.5.0'
+}
+
+test {
+	useJUnitPlatform()
+}
