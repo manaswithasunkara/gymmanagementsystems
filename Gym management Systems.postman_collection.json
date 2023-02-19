@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "788f7213-ee68-4604-8a42-5b0b15bd5a5e",
+		"_postman_id": "89e1be02-b7ad-43d1-95bb-556dbb7e6e9c",
 		"name": "Gym management Systems",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5021995"
 	},
 	"item": [
 		{
@@ -45,30 +46,6 @@
 					"path": [
 						"gym-management",
 						"admins"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Member",
-			"protocolProfileBehavior": {
-				"strictSSL": false,
-				"followRedirects": false
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/gym-management/members",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"gym-management",
-						"members"
 					]
 				}
 			},
@@ -124,6 +101,55 @@
 			"response": []
 		},
 		{
+			"name": "Get Member",
+			"protocolProfileBehavior": {
+				"strictSSL": false,
+				"followRedirects": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/gym-management/members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"gym-management",
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Member Attend",
+			"protocolProfileBehavior": {
+				"strictSSL": false,
+				"followRedirects": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/gym-management/members/attend",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"gym-management",
+						"members",
+						"attend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Add Admin",
 			"protocolProfileBehavior": {
 				"strictSSL": false,
@@ -134,7 +160,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"adminName\" : \"Manaswitha\",\r\n    \"phoneNumber\": \"8888888888\",\r\n    \"emailId\" : \"manu@jaffa.com\",\r\n    \"password\" : \"jaffa2002\"\r\n}",
+					"raw": "{\r\n    \"firstName\" : \"Manu\",\r\n    \"lastName\": \"Sunkara\",\r\n    \"phoneNumber\": \"8888888888\",\r\n    \"emailId\" : \"1234@web.com\",\r\n    \"password\" : \"manu2002\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -168,7 +194,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\" : \"Manaswitha\",\r\n    \"lastName\" : \"The Jaffa\",\r\n    \"address\": \"the jaffa street\",\r\n    \"gender\" : \"?\",\r\n    \"dob\" : \"nevermind\",\r\n    \"mobile\": \"0000000000\",\r\n    \"ssn\" : \"1234567\",\r\n    \"designation\": \"trouble maker\",\r\n    \"joinDate\": \"my wish\"\r\n}",
+					"raw": "{\r\n    \"firstName\" : \"Manu\",\r\n    \"lastName\" : \"Sunkara\",\r\n    \"address\": \"address\",\r\n    \"gender\" : \"gender\",\r\n    \"dob\" : \"nevermind\",\r\n    \"phone\": \"0000000000\",\r\n    \"ssn\" : \"1234567\",\r\n    \"designation\": \"trouble maker\",\r\n    \"joinDate\": \"my wish\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -202,7 +228,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"isPresent\": true,\r\n    \"date\": \"19/02/2023\"\r\n}",
+					"raw": "{\r\n    \"empId\" : 1,\r\n    \"isPresent\": true,\r\n    \"date\": \"19/02/2023\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -237,7 +263,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"adminName\" : \"Manaswitha\",\r\n    \"phoneNumber\": \"8888888888\",\r\n    \"emailId\" : \"manu@jaffa.com\",\r\n    \"password\" : \"jaffa2002\"\r\n}",
+					"raw": "{\r\n    \"firstName\" : \"Manu\",\r\n    \"lastName\" : \"Sunkara\",\r\n    \"address\": \"address\",\r\n    \"gender\" : \"gender\",\r\n    \"emailId\" : \"1234@web.com\",\r\n    \"phone\": \"0000000000\",\r\n    \"workouts\" : \"workouts\",\r\n    \"status\" : \"active\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -254,6 +280,41 @@
 					"path": [
 						"gym-management",
 						"members",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Member Attent",
+			"protocolProfileBehavior": {
+				"strictSSL": false,
+				"followRedirects": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memId\" : 1,\r\n    \"isPresent\": true,\r\n    \"date\": \"19/02/2023\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/gym-management/members/attend/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"gym-management",
+						"members",
+						"attend",
 						"add"
 					]
 				}
